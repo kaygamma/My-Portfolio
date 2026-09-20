@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div className="sticky top-0 z-10  border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 text-slate-800 dark:text-slate-200 shadow-lg rounded-4xl m-1.5 backdrop-blur-xs transition-all duration-150">
-      <div className="flex flex-wrap items-center justify-between p-4">
+      <div className="flex flex-wrap items-center  md:gap-8 p-4">
         <div className="flex items-center gap-4">
           <div className="relative flex items-center justify-center">
             <Scan
@@ -24,14 +24,14 @@ export default function Header() {
             />
           </div>
 
-          <div>
+          <div className="hidden md:flex flex-col">
             <h1 className="text-xl font-bold">Kay Gamma</h1>
             <p className="text-sm text-slate-600 dark:text-slate-400">
               Software Engineer
             </p>
           </div>
         </div>
-        <nav className="flex gap-4">
+        <nav className="flex md:gap-6 gap-2 m-auto">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>
