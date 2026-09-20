@@ -31,7 +31,7 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <nav className="flex md:gap-6 gap-2 m-auto">
+        <nav className="flex md:gap-6 gap-3 m-auto">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>

@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div>
-      <div className="flex flex-col items-center justify-between md:p-24 p-8">
+      <div className="flex flex-col items-center justify-between md:p-18 p-8">
         <h1 className="text-4xl font-bold">About Me</h1>
         <div className="flex flex-col gap-4 text-lg text-slate-600 dark:text-slate-400">
           <div>
@@ -124,59 +124,61 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between md:p-24 p-8">
+      <div className="flex flex-col items-center md:p-18 p-8">
         <h2 className="text-4xl font-bold">Skills</h2>
-        <div className="flex flex-row flex-wrap p-4 gap-8 text-lg text-slate-600 dark:text-slate-400">
-          <div className="w-70 h-80 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  backdrop-blur-xl rounded-4xl shadow-lg p-4 ">
-            <h2>Programming Languages</h2>
-            <div>
-              <p>C/C++</p>
-              <p>Python</p>
-              <p>JavaScript</p>
-              <p>TypeScript</p>
-              <p>Java</p>
+        <div className="">
+          <div className="flex flex-row flex-wrap justify-center p-4 gap-8 text-lg text-slate-600 dark:text-slate-400">
+            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  backdrop-blur-xl rounded-4xl shadow-lg p-4 ">
+              <h2>Programming Languages</h2>
+              <div>
+                <p>C/C++</p>
+                <p>Python</p>
+                <p>JavaScript</p>
+                <p>TypeScript</p>
+                <p>Java</p>
+              </div>
             </div>
-          </div>
-          <div className="w-70 h-80 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-            <h2>Web Development</h2>
-            <div>
-              <p>HTML</p>
-              <p>CSS</p>
-              <p>JavaScript</p>
-              <p>TypeScript</p>
-              <p>React</p>
-              <p>Next.js</p>
-              <p>Tailwind CSS</p>
+            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
+              <h2>Web Development</h2>
+              <div>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>TypeScript</p>
+                <p>React</p>
+                <p>Next.js</p>
+                <p>Tailwind CSS</p>
+              </div>
             </div>
-          </div>
-          <div className="w-70 h-80 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-            <h2>Computer Science</h2>
-            <div>
-              <p>Algorithms</p>
-              <p>Data Structure</p>
-              <p>Database System</p>
-              <p>Computer Architecture</p>
-              <p>SQL</p>
+            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
+              <h2>Computer Science</h2>
+              <div>
+                <p>Algorithms</p>
+                <p>Data Structure</p>
+                <p>Database System</p>
+                <p>Computer Architecture</p>
+                <p>SQL</p>
+              </div>
             </div>
-          </div>
-          <div className="w-70 h-80 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-            <h2>Tools</h2>
-            <div>
-              <p>Git</p>
-              <p>GitHub</p>
-              <p>VS Code</p>
-              <p>My SQL</p>
-              <p>Vercel</p>
+            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
+              <h2>Tools</h2>
+              <div>
+                <p>Git</p>
+                <p>GitHub</p>
+                <p>VS Code</p>
+                <p>My SQL</p>
+                <p>Vercel</p>
+              </div>
             </div>
-          </div>
-          <div className="w-70 h-80 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-            <h2>Currently Exploring </h2>
-            <div>
-              <p>Backend Development</p>
-              <p>AI/Machine Learning</p>
-              <p>Advance TypeScript</p>
-              <p>Software Architecture</p>
-              <p>Intelligent Systems</p>
+            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
+              <h2>Currently Exploring </h2>
+              <div>
+                <p>Backend Development</p>
+                <p>AI/Machine Learning</p>
+                <p>Advance TypeScript</p>
+                <p>Software Architecture</p>
+                <p>Intelligent Systems</p>
+              </div>
             </div>
           </div>
         </div>
