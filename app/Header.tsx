@@ -36,6 +36,7 @@ export default function Header() {
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/trials">Trial</Link>
         </nav>
         <ToggleTheme />
       </div>
