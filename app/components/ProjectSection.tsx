@@ -11,27 +11,39 @@ const sectionVariants = {
   },
 };
 
-const projects = [
+const projects: Array<{
+  title: string;
+  description: string;
+  tags: string[];
+  accent: "purple" | "blue" | "emerald" | "fuchsia";
+}> = [
   {
-    title: "E-Commerce Dashboard",
+    title: "Gamma Quiz App",
     description:
-      "Real-time analytics dashboard for online retailers with data visualization and inventory management.",
-    tags: ["Next.js", "TypeScript", "Chart.js", "Prisma"],
+      "An interactive coding-knowledge quiz pulling live questions from a trivia API, styled with a code-editor-inspired UI. Built to learn useReducer for centralized state management and useContext to avoid prop drilling across routes. [GitHub link][Live demo link]",
+    tags: ["React", "JavaScript", "Tailwind"],
     accent: "purple",
   },
   {
-    title: "SaaS Landing Page",
+    title: "Weather App",
     description:
-      "High-conversion marketing site with animated sections and A/B tested layouts.",
-    tags: ["Next.js", "Tailwind", "Framer Motion", "Vercel"],
+      "Real-time weather lookup with a 24-hour-before/24-hour-after hourly forecast, built around a custom useWeather hook instead of a reducer    — a deliberate architecture choice to practice a different state-management pattern from the quiz app. [GitHub link] · [Live demo link]",
+    tags: ["React", "JavaScript", "Tailwind", "Framer Motion", "Vercel"],
     accent: "blue",
   },
   {
-    title: "Task Management App",
+    title: "My Portfolio",
     description:
-      "Collaborative project management tool with drag-and-drop and real-time updates.",
-    tags: ["Next.js", "WebSocket", "Docker", "Redis"],
+      " My first project using the Next.js App Router and TypeScript — multi-page routing, a real working contact form via Resend, and a        deliberate Server/Client Component split for performance. [GitHub link] · [Live demo link]",
+    tags: ["React", "TypeScript", "Tailwind", "Framer Motion", "Vercel"],
     accent: "emerald",
+  },
+  {
+    title: "Coopérative des Produits",
+    description:
+      "A cooperative products website built across web development  coursework, progressing from semantic HTML/CSS through full JavaScript CRUD functionality. (Worth including if it's a genuinely presentable coursework project — good evidence of your progression from fundamentals to full-stack CRUD)",
+    tags: ["HTML", "CSS", "JavaScript"],
+    accent: "fuchsia",
   },
 ];
 
@@ -70,6 +82,7 @@ export default function ProjectsSection() {
               title={project.title}
               description={project.description}
               tags={project.tags}
+              accent={project.accent}
             />
           ))}
         </motion.div>

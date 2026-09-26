@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="sticky top-0 z-10  border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 text-slate-800 dark:text-slate-200 shadow-lg rounded-4xl m-1.5 backdrop-blur-xs transition-all duration-150">
+    <div className="sticky top-0 z-10  border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 text-slate-800 dark:text-slate-200 shadow-lg rounded-4xl m-1.5 backdrop-blur-xs transition-all duration-300">
       <div className="flex flex-wrap items-center  md:gap-8 p-4">
         <div className="flex items-center gap-4">
           <div className="relative flex items-center justify-center">
@@ -36,7 +36,7 @@ export default function Header() {
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/contact">Contact</Link>
-          <Link href="/trials">Trial</Link>
+          {/* <Link href="/trials">Trial</Link> */}
         </nav>
         <ToggleTheme />
       </div>

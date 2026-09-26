@@ -13,13 +13,12 @@ const fadeInUp = {
 };
 
 const stagger = {
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.25 } },
 };
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950 text-white">
-      {/* Subtle gradient mesh background */}
+    <section className="relative z-0 min-h-screen flex items-center justify-center overflow-hidden bg-gray-950 text-white">
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-3xl" />
@@ -65,7 +64,7 @@ export default function HeroSection() {
           animate="visible"
           className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <MagneticButton href="/work">View Projects</MagneticButton>
+          <MagneticButton href="/projects">View Projects</MagneticButton>
           <MagneticButton href="/contact" variant="secondary">
             Get in Touch
           </MagneticButton>

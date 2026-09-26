@@ -11,17 +11,18 @@ const cardVariants = {
   },
 };
 
+const accentMap = {
+  purple: "from-purple-500/20 to-purple-500/0",
+  blue: "from-blue-500/20 to-blue-500/0",
+  emerald: "from-emerald-500/20 to-emerald-500/0",
+  fuchsia: "from-fuchsia-500/20 to-fuchsia-500/0",
+};
+
 type ProjectCardProps = {
   title: string;
   description: string;
   tags: string[];
   accent?: keyof typeof accentMap;
-};
-
-const accentMap = {
-  purple: "from-purple-500/20 to-purple-500/0",
-  blue: "from-blue-500/20 to-blue-500/0",
-  emerald: "from-emerald-500/20 to-emerald-500/0",
 };
 
 export default function ProjectCard({
@@ -36,7 +37,6 @@ export default function ProjectCard({
       whileHover={{ y: -8 }}
       className="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 p-8 hover:border-white/20 transition-colors duration-300"
     >
-      {/* Hover gradient glow */}
       <div
         className={`absolute inset-0 bg-linear-to-br ${accentMap[accent]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
