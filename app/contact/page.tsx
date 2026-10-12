@@ -1,12 +1,20 @@
+import ContactActions from "../components/ContactActions";
+import PageIntro from "../components/PageIntro";
+
 export default function Contact() {
   return (
-    <div className="flex flex-col items-center justify-between md:p-18 p-8">
-      <h1 className="text-4xl font-bold">Contact Me</h1>
-      <p className="text-lg text-slate-600 dark:text-slate-400">
-        Feel free to reach out to me via email or connect with me on social
-        media. I'm always open to discussing new projects, creative ideas, or
-        opportunities to be part of your visions.
-      </p>
-    </div>
+    <main className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-8">
+      <PageIntro
+        eyebrow="Let’s talk"
+        title="Have an idea? Let’s make it happen."
+        description="Whether you have a project in mind, want to talk about technology, or just want to say hello, I’d love to hear from you."
+      />
+      <section
+        aria-label="Ways to get in touch"
+        className="max-w-5xl rounded-3xl border border-slate-200 bg-white/70 p-5 shadow-sm dark:border-white/10 dark:bg-white/5 sm:p-8"
+      >
+        <ContactActions />
+      </section>
+    </main>
   );
 }
