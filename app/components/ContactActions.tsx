@@ -3,12 +3,11 @@
 import { useState } from "react";
 import {
   ArrowUpRight,
-  BriefcaseBusiness,
   Check,
-  Code2,
   Copy,
   Mail,
 } from "lucide-react";
+import { getTecIcon } from "../utils/TecIcons";
 
 const email = "yahedmund00@gmail.com";
 
@@ -23,13 +22,13 @@ const contactMethods = [
     label: "GitHub",
     detail: "Explore my work",
     href: "https://github.com/kaygamma",
-    Icon: Code2,
+    iconName: "GitHub",
   },
   {
     label: "LinkedIn",
     detail: "Let’s connect",
     href: "https://www.linkedin.com/in/edmund-yahaya/",
-    Icon: BriefcaseBusiness,
+    iconName: "LinkedIn",
   },
 ];
 
@@ -51,7 +50,7 @@ export default function ContactActions() {
   return (
     <div>
       <div className="grid gap-4 sm:grid-cols-3">
-        {contactMethods.map(({ label, detail, href, Icon }) => (
+        {contactMethods.map(({ label, detail, href, Icon, iconName }) => (
           <a
             key={label}
             href={href}
@@ -60,7 +59,15 @@ export default function ContactActions() {
             className="group rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-purple-400 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500 dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/70"
           >
             <span className="mb-6 flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-700 transition-colors group-hover:bg-purple-500 group-hover:text-white dark:text-purple-300">
-              <Icon size={20} />
+              {iconName ? (
+                getTecIcon(
+                  iconName,
+                  `h-5 w-5 ${iconName === "GitHub" ? "dark:invert" : ""}`,
+                  true,
+                )
+              ) : Icon ? (
+                <Icon size={20} />
+              ) : null}
             </span>
             <span className="flex items-center justify-between font-semibold text-slate-900 dark:text-white">
               {label}

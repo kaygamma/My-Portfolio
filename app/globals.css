@@ -1,5 +1,33 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes tech-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee-track {
+  animation: tech-marquee var(--marquee-duration, 35s) linear infinite;
+}
+
+.tech-marquee-track:hover,
+.tech-marquee-track:focus-visible {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    width: 100%;
+    overflow-x: auto;
+    animation: none;
+  }
+
+  .tech-marquee-copy[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

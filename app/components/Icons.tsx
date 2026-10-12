@@ -42,7 +42,9 @@ export default function TechStackGrid() {
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-white/10 sm:h-12 sm:w-12">
                 <svg
-                  className="h-6 w-6 sm:h-7 sm:w-7"
+                  className={`h-6 w-6 sm:h-7 sm:w-7 ${
+                    name === "GitHub" ? "dark:invert" : ""
+                  }`}
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                   style={{ color, fill: "currentColor" }}

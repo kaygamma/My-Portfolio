@@ -1,4 +1,5 @@
-import React from "react";
+import { Mail } from "lucide-react";
+import { getTecIcon } from "./utils/TecIcons";
 
 function Footer() {
   return (
@@ -8,32 +9,39 @@ function Footer() {
           &copy; {new Date().getFullYear()} My Portfolio
         </p>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          Built and designed by <span className="font-medium text-slate-900 dark:text-white">Edmund Yahaya</span>
+          Built and designed by           <span className="font-medium text-slate-900 dark:text-white">
+            Edmund Yahaya
+          </span>
         </p>
-        <div className="flex items-center gap-4 text-sm">
+        <nav aria-label="Social links" className="flex items-center gap-4 text-sm">
           <a
             href="https://github.com/kaygamma"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
+            aria-label="GitHub"
+            className="inline-flex min-h-10 items-center gap-2 rounded-lg transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
+            {getTecIcon("GitHub", "h-4 w-4", true, "currentColor")}
             GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/edmund-yahaya/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
+            aria-label="LinkedIn"
+            className="inline-flex min-h-10 items-center gap-2 rounded-lg transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
+            {getTecIcon("LinkedIn", "h-4 w-4", true)}
             LinkedIn
           </a>
           <a
             href="mailto:yahedmund00@gmail.com"
-            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
+            className="inline-flex min-h-10 items-center gap-2 rounded-lg transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
+            <Mail aria-hidden="true" size={16} />
             Email
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );

@@ -40,7 +40,7 @@ export default function ProjectCard({
         className={`absolute inset-0 bg-linear-to-br ${accentMap[accent]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-1 flex-col">
         <h3 className="mb-3 text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">{title}</h3>
         <p className="mb-6 flex-1 leading-relaxed text-slate-600 dark:text-gray-400">{description}</p>
         <div className="flex flex-wrap gap-2" aria-label={`${title} technologies`}>
