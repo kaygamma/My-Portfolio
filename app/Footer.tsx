@@ -2,43 +2,40 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="static bottom-0 left-0 right-0 z-10 mt-auto">
-      <div className="flex flex-col md:gap-24 md:flex-row items-center  justify-center gap-1.5 p-1 md:p-4 border  border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 text-slate-800 dark:text-slate-200 shadow-lg rounded-t-4xl backdrop-blur-sm transition-all duration-150">
-        <p className="md:p-4 text-center text-sm text-slate-500 dark:text-slate-400">
-          &copy; {new Date().getFullYear()} My Portfolio. All rights reserved.
+    <footer className="mt-auto px-1.5 pb-1.5">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 rounded-3xl border border-black/10 bg-white/60 p-5 text-center text-slate-800 shadow-sm backdrop-blur-sm transition-colors duration-150 dark:border-white/10 dark:bg-black/40 dark:text-slate-200 sm:flex-row sm:text-left sm:px-7">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          &copy; {new Date().getFullYear()} My Portfolio
         </p>
-        <p>
-          Built and Designed by <span>Edmund Yahaya</span>
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          Built and designed by <span className="font-medium text-slate-900 dark:text-white">Edmund Yahaya</span>
         </p>
-        <div>
+        <div className="flex items-center gap-4 text-sm">
           <a
             href="https://github.com/kaygamma"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-shadow-gray-100 text-md hover:underline"
+            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
             GitHub
           </a>
-          <span className="mx-2">|</span>
           <a
             href="https://www.linkedin.com/in/edmund-yahaya/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-shadow-gray-100 text-md hover:underline"
+            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
             LinkedIn
           </a>
-          <span className="mx-2">|</span>
           <a
-            href="mailto:yahedmund00@gamil.com"
-            rel="noopener noreferrer"
-            className="text-shadow-gray-100 text-md hover:underline"
+            href="mailto:yahedmund00@gmail.com"
+            className="transition-colors hover:text-purple-700 hover:underline focus-visible:outline-2 focus-visible:outline-purple-500 dark:hover:text-purple-300"
           >
             Email
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

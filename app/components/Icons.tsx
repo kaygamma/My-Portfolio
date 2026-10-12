@@ -1,46 +1,15 @@
 "use client";
-import {
-  siHtml5,
-  siCss,
-  siJavascript,
-  siReact,
-  siNextdotjs,
-  siTailwindcss,
-  siNodedotjs,
-  siDocker,
-  siFigma,
-  siGit,
-  siGithub,
-} from "simple-icons";
+import { stack } from "../utils/TecIcons";
 import { motion } from "framer-motion";
-
-const stack = [
-  { name: "HTML5", Icon: siHtml5, color: "#E34F26" },
-  { name: "CSS3", Icon: siCss, color: "#1572B6" },
-  {
-    name: "JavaScript",
-    Icon: siJavascript,
-    color: "#F7DF1E",
-    darkColor: "#323330",
-  },
-  { name: "React", Icon: siReact, color: "#61DAFB" },
-  { name: "Next.js", Icon: siNextdotjs, color: "#FFFFFF" },
-  { name: "Tailwind", Icon: siTailwindcss, color: "#06B6D4" },
-  { name: "Node.js", Icon: siNodedotjs, color: "#339933" },
-  { name: "Docker", Icon: siDocker, color: "#2496ED" },
-  { name: "Figma", Icon: siFigma, color: "#F24E1E" },
-  { name: "Git", Icon: siGit, color: "#F05032" },
-  { name: "GitHub", Icon: siGithub, color: "#FFFFFF" },
-];
 
 export default function TechStackGrid() {
   return (
-    <section className="py-24 px-6 bg-gray-950">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="bg-slate-100 px-6 py-16 transition-colors duration-150 dark:bg-gray-950 sm:py-20">
+      <div className="mx-auto max-w-6xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-sm font-medium tracking-[0.3em] uppercase text-purple-400 mb-4"
+          className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-purple-700 dark:text-purple-300"
         >
           Technologies
         </motion.p>
@@ -49,7 +18,7 @@ export default function TechStackGrid() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-16"
+          className="mb-8 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:mb-10 sm:text-4xl"
         >
           The tools I work with.
         </motion.h2>
@@ -59,30 +28,29 @@ export default function TechStackGrid() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ staggerChildren: 0.05 }}
-          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8"
+          className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6 sm:gap-4"
         >
-          {stack.map(({ name, Icon, color }, i) => (
+          {stack.map(({ name, Icon, color }) => (
             <motion.div
               key={name}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05, type: "spring", stiffness: 200 }}
+              transition={{ delay: 0.05, type: "spring", stiffness: 200 }}
               whileHover={{ scale: 1.15, y: -4 }}
-              className="group flex flex-col items-center gap-3"
+              className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 p-3 transition-colors hover:border-purple-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/60 sm:flex-col sm:justify-center sm:gap-3 sm:p-4"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:border-white/20 transition-colors">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-white/10 sm:h-12 sm:w-12">
                 <svg
-                  className="w-7 h-7"
+                  className="h-6 w-6 sm:h-7 sm:w-7"
                   viewBox="0 0 24 24"
-                  role="img"
-                  aria-label={name}
+                  aria-hidden="true"
                   style={{ color, fill: "currentColor" }}
                 >
                   <path d={Icon.path} />
                 </svg>
               </div>
-              <span className="text-xs text-gray-400 group-hover:text-gray-200 transition-colors">
+              <span className="text-sm text-gray-700 transition-colors group-hover:text-purple-800 dark:text-gray-300 dark:group-hover:text-purple-200 sm:text-xs">
                 {name}
               </span>
             </motion.div>

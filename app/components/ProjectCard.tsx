@@ -34,21 +34,20 @@ export default function ProjectCard({
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ y: -8 }}
-      className="group relative rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 p-8 hover:border-white/20 transition-colors duration-300"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm backdrop-blur-md transition duration-300 hover:border-purple-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/60 sm:p-7"
     >
       <div
         className={`absolute inset-0 bg-linear-to-br ${accentMap[accent]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
       />
 
       <div className="relative z-10">
-        <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-400 leading-relaxed mb-6">{description}</p>
-        <div className="flex flex-wrap gap-2">
+        <h3 className="mb-3 text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">{title}</h3>
+        <p className="mb-6 flex-1 leading-relaxed text-slate-600 dark:text-gray-400">{description}</p>
+        <div className="flex flex-wrap gap-2" aria-label={`${title} technologies`}>
           {tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs font-medium px-3 py-1 rounded-full bg-white/10 text-gray-300"
+              className="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-gray-300"
             >
               {tag}
             </span>

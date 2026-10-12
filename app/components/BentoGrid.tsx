@@ -5,49 +5,37 @@ import { motion } from "framer-motion";
 const skills = [
   {
     title: "Frontend",
-    description: " ",
     tags: "React, Next.js, TypeScript, Tailwind",
-    span: "col-span-2 row-span-2",
     color: "from-purple-600 to-indigo-600",
     icon: "⚡",
   },
   {
     title: "Programming Languages",
-    description: " ",
-    tags: "C/C++, Python, JavaScript, TypeScript, Java,",
-    span: "col-span-1 row-span-1",
+    tags: "C/C++, Python, JavaScript, TypeScript, Java",
     color: "from-emerald-500 to-teal-600",
     icon: "🔧",
   },
   {
     title: "Computer Science",
-    description: " ",
-    tags: "Algorithms, Data Structure, Database System, Computer Architecture, SQL ",
-    span: "col-span-1 row-span-1",
+    tags: "Algorithms, Data Structures, Database Systems, Computer Architecture, SQL",
     color: "from-blue-500 to-cyan-600",
     icon: "🗄️",
   },
   {
     title: "DevOps",
-    description: " ",
-    tags: "Git, GitHub, VS Code, My SQL, Vercel",
-    span: "col-span-1 row-span-1",
+    tags: "Git, GitHub, VS Code, MySQL, Vercel",
     color: "from-orange-500 to-red-500",
     icon: "🚀",
   },
   {
     title: "Design",
-    description: " ",
     tags: "Figma, UI/UX, Prototyping",
-    span: "col-span-1 row-span-1",
     color: "from-pink-500 to-rose-600",
     icon: "🎨",
   },
   {
     title: "Currently Exploring",
-    description: " ",
-    tags: "Backend Development,  AI/Machine Learning, Advance TypeScript, Software Architecture, Intelligent Systems ",
-    span: "col-span-2 row-span-1",
+    tags: "Backend Development, AI/Machine Learning, Advanced TypeScript, Software Architecture, Intelligent Systems",
     color: "from-gray-700 to-gray-900",
     icon: "📊",
   },
@@ -55,13 +43,13 @@ const skills = [
 
 export default function BentoGrid() {
   return (
-    <section className="py-8 px-6  bg-slate-100/10 dark:bg-black/60">
-      <div className="mx-auto">
+    <section className="px-6 py-16 transition-colors duration-150 sm:py-20">
+      <div className="mx-auto max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl font-bold text-gray-900 mb-16 text-center"
+          className="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:mb-10 sm:text-4xl"
         >
           What I bring to the table.
         </motion.h2>
@@ -70,7 +58,7 @@ export default function BentoGrid() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {skills.map((skill, i) => (
             <motion.div
@@ -79,10 +67,8 @@ export default function BentoGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.02, y: -4 }}
               className={`
-                ${skill.span}
-                relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10  hover:border-white/20 hover:shadow-xl p-8 flex flex-col justify-between transition-all duration-150
+                relative flex min-h-52 flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-1 hover:border-purple-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/60 sm:p-7
               `}
             >
               <div>
@@ -90,7 +76,7 @@ export default function BentoGrid() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   {skill.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   {skill.tags}
                 </p>
               </div>

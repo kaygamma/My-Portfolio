@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import ProjectCard from "./ProjectCard";
 
 const sectionVariants = {
@@ -20,28 +21,28 @@ const projects: Array<{
   {
     title: "Gamma Quiz App",
     description:
-      "An interactive coding-knowledge quiz pulling live questions from a trivia API, styled with a code-editor-inspired UI. Built to learn useReducer for centralized state management and useContext to avoid prop drilling across routes. [GitHub link][Live demo link]",
+      "An interactive coding quiz powered by a trivia API, with a code-editor-inspired interface. Built to practice centralized state management with useReducer and shared state with useContext.",
     tags: ["React", "JavaScript", "Tailwind"],
     accent: "purple",
   },
   {
     title: "Weather App",
     description:
-      "Real-time weather lookup with a 24-hour-before/24-hour-after hourly forecast, built around a custom useWeather hook instead of a reducer    — a deliberate architecture choice to practice a different state-management pattern from the quiz app. [GitHub link] · [Live demo link]",
+      "A real-time weather lookup with hourly forecasts, built around a custom weather hook. The project explores a focused alternative to reducer-based state management.",
     tags: ["React", "JavaScript", "Tailwind", "Framer Motion", "Vercel"],
     accent: "blue",
   },
   {
     title: "My Portfolio",
     description:
-      " My first project using the Next.js App Router and TypeScript — multi-page routing, a real working contact form via Resend, and a        deliberate Server/Client Component split for performance. [GitHub link] · [Live demo link]",
+      "A multi-page portfolio built with the Next.js App Router and TypeScript, featuring responsive layouts, light and dark themes, and interactive page elements.",
     tags: ["React", "TypeScript", "Tailwind", "Framer Motion", "Vercel"],
     accent: "emerald",
   },
   {
     title: "Coopérative des Produits",
     description:
-      "A cooperative products website built across web development  coursework, progressing from semantic HTML/CSS through full JavaScript CRUD functionality. (Worth including if it's a genuinely presentable coursework project — good evidence of your progression from fundamentals to full-stack CRUD)",
+      "A cooperative products website developed through coursework, progressing from semantic HTML and CSS to JavaScript-powered create, read, update, and delete interactions.",
     tags: ["HTML", "CSS", "JavaScript"],
     accent: "fuchsia",
   },
@@ -49,13 +50,13 @@ const projects: Array<{
 
 export default function ProjectsSection() {
   return (
-    <section className="py-32 px-6 bg-gray-950">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-slate-100 px-6 py-20 transition-colors duration-150 dark:bg-gray-950 sm:py-24">
+      <div className="mx-auto max-w-6xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm font-medium tracking-[0.3em] uppercase text-purple-400 mb-4"
+          className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-purple-700 dark:text-purple-300"
         >
           Selected Work
         </motion.p>
@@ -64,9 +65,9 @@ export default function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl sm:text-5xl font-bold text-white mb-16"
+          className="mb-10 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:mb-12 sm:text-5xl"
         >
-          Projects I'm proud of.
+          Projects I&apos;m proud of.
         </motion.h2>
 
         <motion.div
@@ -74,7 +75,7 @@ export default function ProjectsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6"
         >
           {projects.map((project) => (
             <ProjectCard
@@ -86,6 +87,17 @@ export default function ProjectsSection() {
             />
           ))}
         </motion.div>
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-3xl border border-slate-200 bg-white/70 p-5 dark:border-white/10 dark:bg-white/5 sm:flex-row sm:items-center sm:p-6">
+          <p className="text-slate-700 dark:text-slate-300">
+            Have a project or idea you’d like to discuss?
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-purple-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500 dark:bg-white dark:text-slate-900 dark:hover:bg-purple-200"
+          >
+            Get in touch
+          </Link>
+        </div>
       </div>
     </section>
   );

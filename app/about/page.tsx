@@ -1,188 +1,161 @@
+import Link from "next/link";
+import { ArrowDown, ArrowRight, Code2, Compass, GraduationCap } from "lucide-react";
+import PageIntro from "../components/PageIntro";
+
+const skills = [
+  {
+    title: "Web development",
+    icon: Code2,
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML & CSS"],
+  },
+  {
+    title: "Computer science",
+    icon: GraduationCap,
+    items: ["Algorithms", "Data structures", "Databases", "Computer architecture"],
+  },
+  {
+    title: "Tools & exploring",
+    icon: Compass,
+    items: ["Git & GitHub", "Figma", "Backend development", "AI & intelligent systems"],
+  },
+];
+
+const journey = [
+  {
+    title: "Building strong foundations",
+    content:
+      "I study Computer Science Engineering at Université Hassan 1er in Morocco. Programming in C, C++, and Python helped me understand problem solving, algorithms, data structures, databases, and computer architecture.",
+  },
+  {
+    title: "Learning by making",
+    content:
+      "I moved into web development with HTML, CSS, and JavaScript, then started building interactive projects. My quiz app, weather app, and portfolio have helped me put APIs, application logic, and user experience into practice.",
+  },
+  {
+    title: "What’s next",
+    content:
+      "I’m continuing to grow with TypeScript and modern development workflows while exploring backend development, software architecture, AI, and intelligent systems. I’m always looking for a worthwhile problem to build around.",
+  },
+];
+
 export default function About() {
   return (
-    <div>
-      <div className="flex flex-col items-center justify-between md:p-18 p-8">
-        <h1 className="text-4xl font-bold">About Me</h1>
-        <div className="flex flex-col gap-4 text-lg text-slate-600 dark:text-slate-400">
-          <div>
-            I'm <span>Eddie Kay</span>, a Computer Science Engineering student
-            and developer passionate about building digital solutions and
-            continuously expanding my technical skills.
-          </div>
-          <div>
-            My journey into software development has been driven by one simple
-            approach: <span>learn by building</span>. Rather than limiting
-            myself to theory, I turn what I learn into practical projects —
-            experimenting with technologies, solving problems, making mistakes,
-            improving my code, and gradually building more complete
-            applications.
-          </div>
-          <div>
-            I've worked with technologies including{" "}
-            <span>
-              JavaScript, TypeScript, Python, C, C++, HTML, CSS, SQL, and Git
-            </span>
-            , while developing a growing understanding of algorithms, data
-            structures, databases, web development, and software engineering.
-          </div>
-          <div>
-            Some of my projects include a{" "}
-            <span>
-              JavaScript quiz application, a weather application, and my
-              personal portfolio
-            </span>
-            , reflecting my progression from learning individual concepts to
-            building complete web experiences.
-          </div>
-          <div>
-            I'm particularly interested in{" "}
-            <span>
-              software development, web technologies, artificial intelligence,
-              and intelligent systems
-            </span>
-            , and I'm constantly looking for new challenges that push me beyond
-            what I already know.
-          </div>
-          <div>
-            I don't just want to learn how technology works — I want to build
-            with it.
-          </div>
+    <main className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-8">
+      <PageIntro
+        eyebrow="A little about me"
+        title="Curious by nature. A builder by practice."
+        description="I’m Eddie Kay, a Computer Science Engineering student and developer who learns best by turning ideas into useful, thoughtful digital experiences."
+      />
+
+      <section
+        aria-labelledby="approach-heading"
+        className="grid gap-8 rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm dark:border-white/10 dark:bg-white/5 sm:p-9 md:grid-cols-[1fr_auto]"
+      >
+        <div className="max-w-3xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-purple-700 dark:text-purple-300">
+            My approach
+          </p>
+          <h2
+            id="approach-heading"
+            className="text-2xl font-bold text-slate-950 dark:text-white sm:text-3xl"
+          >
+            Learn by building, improve with every iteration.
+          </h2>
+          <p className="mt-4 leading-relaxed text-slate-600 dark:text-slate-400">
+            I enjoy working across the details that make a project feel
+            complete: clear interfaces, useful interactions, maintainable code,
+            and the problem-solving underneath it all. I don’t just want to
+            learn how technology works — I want to build with it.
+          </p>
         </div>
-      </div>
-      <div className="flex flex-col items-center justify-between md:p-24 p-8">
-        <h1 className="text-4xl font-bold">My Journey</h1>
-        <div className="flex flex-col gap-4 text-lg text-slate-600 dark:text-slate-400">
+        <Link
+          href="/projects"
+          className="inline-flex min-h-12 items-center justify-center gap-2 self-end rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-500 dark:bg-white dark:text-slate-900 dark:hover:bg-purple-200"
+        >
+          Explore my work <ArrowRight size={16} />
+        </Link>
+      </section>
+
+      <section aria-labelledby="skills-heading" className="py-16 sm:py-20">
+        <div className="mb-8 flex items-end justify-between gap-4">
           <div>
-            <span>🎓 From Student to Builder</span>
-            My journey started with a curiosity about computers, mathematics,
-            and problem solving. That curiosity eventually led me to pursue{" "}
-            <span>
-              Computer Science Engineering at Université Hassan 1er in Morocco
-            </span>
-            .
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-purple-700 dark:text-purple-300">
+              The toolkit
+            </p>
+            <h2
+              id="skills-heading"
+              className="text-3xl font-bold text-slate-950 dark:text-white"
+            >
+              What I work with
+            </h2>
           </div>
-          <div>
-            {" "}
-            <span>💻 Learning the Foundations</span>I began by building a strong
-            foundation in programming and computer science — learning languages
-            such as <span>C, C++, and Python</span>, while studying algorithms,
-            data structures, databases, computer architecture, and other core
-            concepts.
-          </div>
-          <div>
-            {" "}
-            <span> 🌐 Moving Into Web Development</span>
-            As my understanding grew, I started applying those fundamentals to
-            web development.
-          </div>
-          <div>
-            I began working with <span>HTML, CSS, and JavaScript</span>, moving
-            from simple exercises toward interactive applications.
-          </div>
-          <div>
-            {" "}
-            <span>🛠️ Learning Through Projects</span>{" "}
-          </div>
-          <div>Projects became an important part of my learning process.</div>
-          <div>
-            Instead of simply completing tutorials, I started building
-            applications that required me to think about:
-          </div>
-          <ul>
-            <li> User interaction</li>
-            <li> Application logic</li>
-            <li> Data</li>
-            <li> APIs</li>
-            <li> UI design</li>
-            <li> Debugging</li>
-            <li> Code organization</li>
-            <li> Real-world problem solving</li>
-          </ul>
-          <div>
-            Projects such as my <span>Quiz App</span> and{" "}
-            <span>Gamma Weather App</span> represent this transition from
-            studying concepts to actually building with them.
-          </div>
-          <div>
-            ⚡ Expanding My Stack I've continued expanding my toolkit into{" "}
-            <span>TypeScript and modern development workflows</span>, while
-            maintaining my foundations in C, C++, Python, SQL, and web
-            technologies.
-          </div>
-          <div>
-            My portfolio itself is also part of that journey — an evolving
-            project that documents what I can build today while leaving room for
-            what I will build tomorrow.
-          </div>
-          <div>
-            🚀 What's Next? I'm now focused on becoming a more complete
-            developer — strengthening my software engineering fundamentals,
-            building larger applications, exploring backend development and
-            APIs, and gradually moving deeper into{" "}
-            <span>AI and intelligent systems</span>. My journey is still in
-            progress. <span>And that's the point.</span>
-          </div>
+          <ArrowDown
+            aria-hidden="true"
+            className="mb-1 text-slate-400"
+            size={20}
+          />
         </div>
-      </div>
-      <div className="flex flex-col items-center md:p-18 p-8">
-        <h2 className="text-4xl font-bold">Skills</h2>
-        <div className="">
-          <div className="flex flex-row flex-wrap justify-center p-4 gap-8 text-lg text-slate-600 dark:text-slate-400">
-            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  backdrop-blur-xl rounded-4xl shadow-lg p-4 ">
-              <h2>Programming Languages</h2>
-              <div>
-                <p>C/C++</p>
-                <p>Python</p>
-                <p>JavaScript</p>
-                <p>TypeScript</p>
-                <p>Java</p>
-              </div>
-            </div>
-            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-              <h2>Web Development</h2>
-              <div>
-                <p>HTML</p>
-                <p>CSS</p>
-                <p>JavaScript</p>
-                <p>TypeScript</p>
-                <p>React</p>
-                <p>Next.js</p>
-                <p>Tailwind CSS</p>
-              </div>
-            </div>
-            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-              <h2>Computer Science</h2>
-              <div>
-                <p>Algorithms</p>
-                <p>Data Structure</p>
-                <p>Database System</p>
-                <p>Computer Architecture</p>
-                <p>SQL</p>
-              </div>
-            </div>
-            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60  p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-              <h2>Tools</h2>
-              <div>
-                <p>Git</p>
-                <p>GitHub</p>
-                <p>VS Code</p>
-                <p>My SQL</p>
-                <p>Vercel</p>
-              </div>
-            </div>
-            <div className="md:w-70 w-50 md:h-80 h-70 border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 p-4 backdrop-blur-xl rounded-4xl shadow-lg ">
-              <h2>Currently Exploring </h2>
-              <div>
-                <p>Backend Development</p>
-                <p>AI/Machine Learning</p>
-                <p>Advance TypeScript</p>
-                <p>Software Architecture</p>
-                <p>Intelligent Systems</p>
-              </div>
-            </div>
-          </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {skills.map(({ title, icon: Icon, items }) => (
+            <article
+              key={title}
+              className="rounded-3xl border border-slate-200 bg-white/70 p-6 transition duration-200 hover:-translate-y-1 hover:border-purple-400 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/70"
+            >
+              <span className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-700 dark:text-purple-300">
+                <Icon size={20} />
+              </span>
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                {title}
+              </h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 dark:bg-white/10 dark:text-slate-300"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section aria-labelledby="journey-heading">
+        <div className="mb-6">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-purple-700 dark:text-purple-300">
+            Still in progress
+          </p>
+          <h2
+            id="journey-heading"
+            className="text-3xl font-bold text-slate-950 dark:text-white"
+          >
+            My journey
+          </h2>
+        </div>
+        <div className="divide-y divide-slate-200 overflow-hidden rounded-3xl border border-slate-200 bg-white/70 px-5 dark:divide-white/10 dark:border-white/10 dark:bg-white/5 sm:px-7">
+          {journey.map(({ title, content }, index) => (
+            <details key={title} className="group py-5" open={index === 0}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-lg text-lg font-semibold text-slate-900 outline-none focus-visible:ring-2 focus-visible:ring-purple-500 dark:text-white [&::-webkit-details-marker]:hidden">
+                <span className="flex items-center gap-3">
+                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">
+                    0{index + 1}
+                  </span>
+                  {title}
+                </span>
+                <ArrowDown
+                  size={18}
+                  className="shrink-0 text-slate-500 transition-transform group-open:rotate-180 dark:text-slate-400"
+                />
+              </summary>
+              <p className="max-w-3xl pt-4 pl-9 leading-relaxed text-slate-600 dark:text-slate-400">
+                {content}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
