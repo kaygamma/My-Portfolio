@@ -51,7 +51,6 @@ export default function RootLayout({
         <MotionConfig reducedMotion="user">
           <ThemeProvider>
             <Header />
-            <ScrollProgress />
             {children}
             <Footer />
           </ThemeProvider>
