@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import TextMarquee from "./components/TextMarquee";
 import Projects from "./projects/page";
 import Contact from "./contact/page";
+import TechStackGrid from "./components/Icons";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <BentoGrid />
       <About embedded />
       <Contact embedded />
+      <TechStackGrid />
     </main>
   );
 }

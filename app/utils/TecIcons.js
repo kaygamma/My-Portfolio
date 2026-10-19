@@ -12,7 +12,11 @@ import {
   siGithub,
   siTypescript,
   siVercel,
+  siC,
+  siCplusplus,
   siHtmx,
+  siPython,
+  siNumpy,
 } from "simple-icons";
 
 const stack = [
@@ -25,6 +29,10 @@ const stack = [
   { name: "Tailwind CSS", Icon: siTailwindcss, color: `#${siTailwindcss.hex}` },
   { name: "Vercel", Icon: siVercel, color: `#${siVercel.hex}` },
   { name: "Node.js", Icon: siNodedotjs, color: `#${siNodedotjs.hex}` },
+  { name: "C", Icon: siC, color: `#${siC.hex}` },
+  { name: "C++", Icon: siCplusplus, color: `#${siCplusplus.hex}` },
+  { name: "Python", Icon: siPython, color: `#${siPython.hex}` },
+  { name: "Numpy", Icon: siNumpy, color: `#${siNumpy.hex}` },
   { name: "Docker", Icon: siDocker, color: `#${siDocker.hex}` },
   { name: "Figma", Icon: siFigma, color: `#${siFigma.hex}` },
   { name: "Git", Icon: siGit, color: `#${siGit.hex}` },
