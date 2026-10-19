@@ -10,20 +10,26 @@ import {
   siFigma,
   siGit,
   siGithub,
+  siTypescript,
+  siVercel,
+  siHtmx,
 } from "simple-icons";
 
 const stack = [
   { name: "HTML5", Icon: siHtml5, color: `#${siHtml5.hex}` },
   { name: "CSS3", Icon: siCss, color: `#${siCss.hex}` },
   { name: "JavaScript", Icon: siJavascript, color: `#${siJavascript.hex}` },
+  { name: "TypeScript", Icon: siTypescript, color: `#${siTypescript.hex}` },
   { name: "React", Icon: siReact, color: `#${siReact.hex}` },
   { name: "Next.js", Icon: siNextdotjs, color: `#${siNextdotjs.hex}` },
   { name: "Tailwind CSS", Icon: siTailwindcss, color: `#${siTailwindcss.hex}` },
+  { name: "Vercel", Icon: siVercel, color: `#${siVercel.hex}` },
   { name: "Node.js", Icon: siNodedotjs, color: `#${siNodedotjs.hex}` },
   { name: "Docker", Icon: siDocker, color: `#${siDocker.hex}` },
   { name: "Figma", Icon: siFigma, color: `#${siFigma.hex}` },
   { name: "Git", Icon: siGit, color: `#${siGit.hex}` },
   { name: "GitHub", Icon: siGithub, color: `#${siGithub.hex}` },
+  { name: "Htmx", Icon: siHtmx, color: `#${siHtmx.hex}` },
 ];
 const socialIcons = [
   {

@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Code2, Compass, GraduationCap } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  Code2,
+  Compass,
+  GraduationCap,
+} from "lucide-react";
 import PageIntro from "../components/PageIntro";
 
 const skills = [
@@ -11,12 +17,22 @@ const skills = [
   {
     title: "Computer science",
     icon: GraduationCap,
-    items: ["Algorithms", "Data structures", "Databases", "Computer architecture"],
+    items: [
+      "Algorithms",
+      "Data structures",
+      "Databases",
+      "Computer architecture",
+    ],
   },
   {
     title: "Tools & exploring",
     icon: Compass,
-    items: ["Git & GitHub", "Figma", "Backend development", "AI & intelligent systems"],
+    items: [
+      "Git & GitHub",
+      "Figma",
+      "Backend development",
+      "AI & intelligent systems",
+    ],
   },
 ];
 
@@ -38,13 +54,21 @@ const journey = [
   },
 ];
 
-export default function About() {
+export default function About({ embedded = false }: { embedded?: boolean }) {
+  const Container = embedded ? "div" : "main";
+
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 pb-20 sm:px-8">
+    <Container
+      id={embedded ? "about" : undefined}
+      className={`mx-auto w-full max-w-6xl px-6 pb-20 sm:px-8 ${
+        embedded ? "scroll-mt-24" : ""
+      }`}
+    >
       <PageIntro
         eyebrow="A little about me"
         title="Curious by nature. A builder by practice."
         description="I’m Eddie Kay, a Computer Science Engineering student and developer who learns best by turning ideas into useful, thoughtful digital experiences."
+        headingLevel={embedded ? "h2" : "h1"}
       />
 
       <section
@@ -156,6 +180,6 @@ export default function About() {
           ))}
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

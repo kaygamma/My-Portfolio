@@ -1,21 +1,21 @@
 import About from "./about/page";
 import BentoGrid from "./components/BentoGrid";
 import HeroSection from "./components/HeroSection";
-import ProjectsSection from "./components/ProjectSection";
 import TextMarquee from "./components/TextMarquee";
-import Contact from "./contact/page";
 import Projects from "./projects/page";
+import Contact from "./contact/page";
 
 export default function Home() {
   return (
     <main>
-      <HeroSection />
+      <div id="home" className="scroll-mt-24">
+        <HeroSection />
+      </div>
       <TextMarquee />
-      <ProjectsSection />
+      <Projects embedded />
       <BentoGrid />
-      <Projects />
-      <About />
-      <Contact />
+      <About embedded />
+      <Contact embedded />
     </main>
   );
 }

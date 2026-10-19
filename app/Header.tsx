@@ -1,7 +1,7 @@
 "use client";
 
 import { Menu, Scan, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import ProfilePic from "./profilepic1.png";
 import ToggleTheme from "./components/ToggleTheme";
@@ -11,21 +11,68 @@ import Link from "next/link";
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
 
   const closeMenu = () => setIsMenuOpen(false);
+  const isHome = pathname === "/";
   const links = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", route: "/", section: "#home" },
+    { label: "Projects", route: "/projects", section: "#projects" },
+    { label: "About", route: "/about", section: "#about" },
+    { label: "Contact", route: "/contact", section: "#contact" },
   ];
 
-  const linkClass = (href: string) =>
+  useEffect(() => {
+    if (!isHome) return;
+
+    const sectionIds = ["home", "projects", "about", "contact"];
+    const updateActiveSection = () => {
+      const active = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter((section): section is HTMLElement => section !== null)
+        .filter((section) => section.getBoundingClientRect().top <= 120)
+        .pop();
+
+      setActiveSection(active ? `#${active.id}` : "#home");
+    };
+    const initialFrame = window.requestAnimationFrame(updateActiveSection);
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("hashchange", updateActiveSection);
+
+    return () => {
+      window.cancelAnimationFrame(initialFrame);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("hashchange", updateActiveSection);
+    };
+  }, [isHome]);
+
+  const linkClass = (isCurrent: boolean) =>
     `rounded-full px-3 py-2 text-sm font-medium transition-colors hover:bg-purple-500/10 hover:text-purple-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 dark:hover:text-purple-300 ${
-      pathname === href
+      isCurrent
         ? "bg-purple-500/10 text-purple-700 dark:text-purple-300"
         : "text-slate-700 dark:text-slate-300"
     }`;
+
+  const renderNavLink = (
+    { label, route, section }: (typeof links)[number],
+    mobile = false,
+  ) => {
+    const isCurrent = isHome ? activeSection === section : pathname === route;
+
+    return (
+      <Link
+        key={route}
+        href={isHome ? section : route}
+        className={`${linkClass(isCurrent)} ${
+          mobile ? "w-full text-center" : ""
+        }`}
+        aria-current={isCurrent ? (isHome ? "location" : "page") : undefined}
+        onClick={mobile ? closeMenu : undefined}
+      >
+        {label}
+      </Link>
+    );
+  };
 
   return (
     <div className="sticky top-0 z-10  border border-black/15 dark:border-white/15 bg-slate-100/10 dark:bg-black/60 text-slate-800 dark:text-slate-200 shadow-lg rounded-4xl m-1.5 backdrop-blur-xs transition-all duration-300">
@@ -47,7 +94,7 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex flex-col">
-            <h1 className="text-xl font-bold">Kay Gamma</h1>
+            <p className="text-xl font-bold">Kay Gamma</p>
             <p className="text-sm text-slate-600 dark:text-slate-400">
               Software Engineer
             </p>
@@ -58,16 +105,7 @@ export default function Header() {
           className="hidden md:flex md:gap-6 gap-3 m-auto"
           aria-label="Main navigation"
         >
-          {links.map(({ label, href }) => (
-            <Link
-              key={href}
-              href={href}
-              className={linkClass(href)}
-              aria-current={pathname === href ? "page" : undefined}
-            >
-              {label}
-            </Link>
-          ))}
+          {links.map((link) => renderNavLink(link))}
         </nav>
 
         <div className="hidden md:block">
@@ -94,17 +132,7 @@ export default function Header() {
           className="md:hidden flex flex-col items-center gap-5 border-t border-black/10 dark:border-white/15 px-4 py-5"
           aria-label="Mobile navigation"
         >
-          {links.map(({ label, href }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`${linkClass(href)} w-full text-center`}
-              aria-current={pathname === href ? "page" : undefined}
-              onClick={closeMenu}
-            >
-              {label}
-            </Link>
-          ))}
+          {links.map((link) => renderNavLink(link, true))}
           <ToggleTheme />
         </nav>
       )}
