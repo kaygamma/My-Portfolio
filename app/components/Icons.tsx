@@ -38,12 +38,14 @@ export default function TechStackGrid() {
               viewport={{ once: true }}
               transition={{ delay: 0.05, type: "spring", stiffness: 200 }}
               whileHover={{ scale: 1.15, y: -4 }}
-              className="group flex items-center gap-3 rounded-2xl border border-slate-200 bg-white/80 p-3 transition-colors hover:border-purple-300 dark:border-white/10 dark:bg-white/5 dark:hover:border-purple-400/60 sm:flex-col sm:justify-center sm:gap-3 sm:p-4"
+              className="group flex items-center gap-3"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 dark:bg-white/10 sm:h-12 sm:w-12">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 sm:h-12 sm:w-12">
                 <svg
                   className={`h-6 w-6 sm:h-7 sm:w-7 ${
-                    name === "GitHub" ? "dark:invert" : ""
+                    name === "GitHub" || name === "Vercel" || name === "Next.js"
+                      ? "dark:invert"
+                      : ""
                   }`}
                   viewBox="0 0 24 24"
                   aria-hidden="true"
