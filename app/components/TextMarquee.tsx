@@ -10,7 +10,9 @@ export default function TextMarquee({ speed = 35 }: { speed?: number }) {
       >
         <svg
           className={`h-4 w-4 sm:h-4.5 sm:w-4.5 ${
-            name === "GitHub" ? "dark:invert" : ""
+            name === "GitHub" || name === "Vercel" || name === "Next.js"
+              ? "dark:invert"
+              : ""
           }`}
           viewBox="0 0 24 24"
           aria-hidden="true"

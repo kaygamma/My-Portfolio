@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ArrowUpRight,
-  Check,
-  Copy,
-  Mail,
-} from "lucide-react";
+import { ArrowUpRight, Check, Copy, Mail } from "lucide-react";
 import { getTecIcon } from "../utils/TecIcons";
 
 const email = "yahedmund00@gmail.com";
@@ -97,7 +92,10 @@ export default function ContactActions() {
               ? "Copying email…"
               : "Copy email"}
         </button>
-        <p aria-live="polite" className="text-sm text-slate-600 dark:text-slate-400">
+        <p
+          aria-live="polite"
+          className="text-sm text-slate-600 dark:text-slate-400"
+        >
           {copyState === "error" &&
             "Could not copy automatically. Use the email link above instead."}
         </p>

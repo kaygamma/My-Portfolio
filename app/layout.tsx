@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Geist_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import ScrollProgress from "./components/ScrollProgress";
 import { ThemeProvider } from "./context/ThemeProvider";
 import { MotionConfig } from "framer-motion";
 
@@ -12,10 +11,20 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Edmund Yahaya | Portfolio",
   description:
-    "Frontend developer portfolio — React, Next.js, and design-driven web projects.",
+    "Full-stack developer portfolio — React, Next.js, and design-driven web projects.",
 };
 
 export default function RootLayout({
@@ -26,8 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
+      className={`${inter.variable}  ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <script
